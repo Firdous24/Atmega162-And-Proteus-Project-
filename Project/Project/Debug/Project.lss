@@ -1,0 +1,309 @@
+
+Project.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000000  00800100  00800100  0000021a  2**0
+                  ALLOC, LOAD, DATA
+  1 .text         000000ca  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          00000008  00800100  00800100  0000021a  2**0
+                  ALLOC
+  3 .comment      0000002f  00000000  00000000  0000021a  2**0
+                  CONTENTS, READONLY
+  4 .debug_aranges 00000028  00000000  00000000  00000249  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   00000955  00000000  00000000  00000271  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 00000651  00000000  00000000  00000bc6  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   00000252  00000000  00000000  00001217  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000044  00000000  00000000  0000146c  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    000001f6  00000000  00000000  000014b0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    00000078  00000000  00000000  000016a6  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000018  00000000  00000000  0000171e  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .text         00000004  000001a2  000001a2  00000216  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 13 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00001738  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 14 .text.GetKeyPressed 0000001e  00000184  00000184  000001f8  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 15 .text.main    000000ba  000000ca  000000ca  0000013e  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 3b 00 	jmp	0x76	; 0x76 <__ctors_end>
+   4:	0c 94 d1 00 	jmp	0x1a2	; 0x1a2 <__bad_interrupt>
+   8:	0c 94 d1 00 	jmp	0x1a2	; 0x1a2 <__bad_interrupt>
+   c:	0c 94 d1 00 	jmp	0x1a2	; 0x1a2 <__bad_interrupt>
+  10:	0c 94 d1 00 	jmp	0x1a2	; 0x1a2 <__bad_interrupt>
+  14:	0c 94 d1 00 	jmp	0x1a2	; 0x1a2 <__bad_interrupt>
+  18:	0c 94 d1 00 	jmp	0x1a2	; 0x1a2 <__bad_interrupt>
+  1c:	0c 94 d1 00 	jmp	0x1a2	; 0x1a2 <__bad_interrupt>
+  20:	0c 94 d1 00 	jmp	0x1a2	; 0x1a2 <__bad_interrupt>
+  24:	0c 94 d1 00 	jmp	0x1a2	; 0x1a2 <__bad_interrupt>
+  28:	0c 94 d1 00 	jmp	0x1a2	; 0x1a2 <__bad_interrupt>
+  2c:	0c 94 d1 00 	jmp	0x1a2	; 0x1a2 <__bad_interrupt>
+  30:	0c 94 d1 00 	jmp	0x1a2	; 0x1a2 <__bad_interrupt>
+  34:	0c 94 d1 00 	jmp	0x1a2	; 0x1a2 <__bad_interrupt>
+  38:	0c 94 d1 00 	jmp	0x1a2	; 0x1a2 <__bad_interrupt>
+  3c:	0c 94 d1 00 	jmp	0x1a2	; 0x1a2 <__bad_interrupt>
+  40:	0c 94 d1 00 	jmp	0x1a2	; 0x1a2 <__bad_interrupt>
+  44:	0c 94 d1 00 	jmp	0x1a2	; 0x1a2 <__bad_interrupt>
+  48:	0c 94 d1 00 	jmp	0x1a2	; 0x1a2 <__bad_interrupt>
+  4c:	0c 94 d1 00 	jmp	0x1a2	; 0x1a2 <__bad_interrupt>
+  50:	0c 94 d1 00 	jmp	0x1a2	; 0x1a2 <__bad_interrupt>
+  54:	0c 94 d1 00 	jmp	0x1a2	; 0x1a2 <__bad_interrupt>
+  58:	0c 94 d1 00 	jmp	0x1a2	; 0x1a2 <__bad_interrupt>
+  5c:	0c 94 d1 00 	jmp	0x1a2	; 0x1a2 <__bad_interrupt>
+  60:	0c 94 d1 00 	jmp	0x1a2	; 0x1a2 <__bad_interrupt>
+  64:	0c 94 d1 00 	jmp	0x1a2	; 0x1a2 <__bad_interrupt>
+  68:	0c 94 d1 00 	jmp	0x1a2	; 0x1a2 <__bad_interrupt>
+  6c:	0c 94 d1 00 	jmp	0x1a2	; 0x1a2 <__bad_interrupt>
+
+00000070 <.dinit>:
+  70:	01 00       	.word	0x0001	; ????
+  72:	01 08       	sbc	r0, r1
+  74:	80 00       	.word	0x0080	; ????
+
+00000076 <__ctors_end>:
+  76:	11 24       	eor	r1, r1
+  78:	1f be       	out	0x3f, r1	; 63
+  7a:	cf ef       	ldi	r28, 0xFF	; 255
+  7c:	d4 e0       	ldi	r29, 0x04	; 4
+  7e:	de bf       	out	0x3e, r29	; 62
+  80:	cd bf       	out	0x3d, r28	; 61
+
+00000082 <__do_copy_data>:
+  82:	e0 e7       	ldi	r30, 0x70	; 112
+  84:	f0 e0       	ldi	r31, 0x00	; 0
+  86:	40 e0       	ldi	r20, 0x00	; 0
+  88:	17 c0       	rjmp	.+46     	; 0xb8 <__do_clear_bss+0x8>
+  8a:	b5 91       	lpm	r27, Z+
+  8c:	a5 91       	lpm	r26, Z+
+  8e:	35 91       	lpm	r19, Z+
+  90:	25 91       	lpm	r18, Z+
+  92:	05 91       	lpm	r16, Z+
+  94:	07 fd       	sbrc	r16, 7
+  96:	0c c0       	rjmp	.+24     	; 0xb0 <__do_clear_bss>
+  98:	95 91       	lpm	r25, Z+
+  9a:	85 91       	lpm	r24, Z+
+  9c:	ef 01       	movw	r28, r30
+  9e:	f9 2f       	mov	r31, r25
+  a0:	e8 2f       	mov	r30, r24
+  a2:	05 90       	lpm	r0, Z+
+  a4:	0d 92       	st	X+, r0
+  a6:	a2 17       	cp	r26, r18
+  a8:	b3 07       	cpc	r27, r19
+  aa:	d9 f7       	brne	.-10     	; 0xa2 <__do_copy_data+0x20>
+  ac:	fe 01       	movw	r30, r28
+  ae:	04 c0       	rjmp	.+8      	; 0xb8 <__do_clear_bss+0x8>
+
+000000b0 <__do_clear_bss>:
+  b0:	1d 92       	st	X+, r1
+  b2:	a2 17       	cp	r26, r18
+  b4:	b3 07       	cpc	r27, r19
+  b6:	e1 f7       	brne	.-8      	; 0xb0 <__do_clear_bss>
+  b8:	e5 37       	cpi	r30, 0x75	; 117
+  ba:	f4 07       	cpc	r31, r20
+  bc:	31 f7       	brne	.-52     	; 0x8a <__do_copy_data+0x8>
+  be:	0e 94 65 00 	call	0xca	; 0xca <_etext>
+  c2:	0c 94 63 00 	jmp	0xc6	; 0xc6 <_exit>
+
+000000c6 <_exit>:
+  c6:	f8 94       	cli
+
+000000c8 <__stop_program>:
+  c8:	ff cf       	rjmp	.-2      	; 0xc8 <__stop_program>
+
+Disassembly of section .text:
+
+000001a2 <__bad_interrupt>:
+ 1a2:	0c 94 00 00 	jmp	0	; 0x0 <__TEXT_REGION_ORIGIN__>
+
+Disassembly of section .text.GetKeyPressed:
+
+00000184 <GetKeyPressed>:
+	}
+}
+int GetKeyPressed(void)
+{
+	char x;
+	PORTB=0x00;
+ 184:	18 ba       	out	0x18, r1	; 24
+	int data =0;
+	//while(data<4){
+	x=PINC;
+ 186:	83 b3       	in	r24, 0x13	; 19
+	if(x==0x03)
+ 188:	83 30       	cpi	r24, 0x03	; 3
+ 18a:	41 f4       	brne	.+16     	; 0x19c <GetKeyPressed+0x18>
+		{
+			//if(data == 0){
+			key1=(PIND&0x0F);
+ 18c:	80 b3       	in	r24, 0x10	; 16
+ 18e:	8f 70       	andi	r24, 0x0F	; 15
+ 190:	90 e0       	ldi	r25, 0x00	; 0
+ 192:	90 93 03 01 	sts	0x0103, r25	; 0x800103 <key1+0x1>
+ 196:	80 93 02 01 	sts	0x0102, r24	; 0x800102 <key1>
+			return key1;
+ 19a:	08 95       	ret
+				key4=(PIND&0x0F);
+				return key4;
+			}*/
+		}
+		//data=data+1;
+		return 16;
+ 19c:	80 e1       	ldi	r24, 0x10	; 16
+ 19e:	90 e0       	ldi	r25, 0x00	; 0
+//}
+ 1a0:	08 95       	ret
+
+Disassembly of section .text.main:
+
+000000ca <main>:
+#define F_CPU 1000000UL
+#include <util/delay.h>
+int GetKeyPressed(void);
+int key1, key2, key3, key4;
+int main(void)
+{	char 
+  ca:	cf 93       	push	r28
+  cc:	df 93       	push	r29
+  ce:	cd b7       	in	r28, 0x3d	; 61
+  d0:	de b7       	in	r29, 0x3e	; 62
+  d2:	64 97       	sbiw	r28, 0x14	; 20
+  d4:	0f b6       	in	r0, 0x3f	; 63
+  d6:	f8 94       	cli
+  d8:	de bf       	out	0x3e, r29	; 62
+  da:	0f be       	out	0x3f, r0	; 63
+  dc:	cd bf       	out	0x3d, r28	; 61
+	password[4]={5,2,3,4};
+  de:	15 e0       	ldi	r17, 0x05	; 5
+	char
+	digit[20]={0x00,0x01,0x02,0x03,0x04,0x05,0x06,0x07,0x08, 0x09,0x0A,0x0B,0x0C,0x0D,0x0E,0x0F};
+  e0:	fe 01       	movw	r30, r28
+  e2:	31 96       	adiw	r30, 0x01	; 1
+  e4:	84 e1       	ldi	r24, 0x14	; 20
+  e6:	df 01       	movw	r26, r30
+  e8:	1d 92       	st	X+, r1
+  ea:	8a 95       	dec	r24
+  ec:	e9 f7       	brne	.-6      	; 0xe8 <main+0x1e>
+  ee:	81 e0       	ldi	r24, 0x01	; 1
+  f0:	8a 83       	std	Y+2, r24	; 0x02
+  f2:	82 e0       	ldi	r24, 0x02	; 2
+  f4:	8b 83       	std	Y+3, r24	; 0x03
+  f6:	93 e0       	ldi	r25, 0x03	; 3
+  f8:	9c 83       	std	Y+4, r25	; 0x04
+  fa:	94 e0       	ldi	r25, 0x04	; 4
+  fc:	9d 83       	std	Y+5, r25	; 0x05
+  fe:	1e 83       	std	Y+6, r17	; 0x06
+ 100:	96 e0       	ldi	r25, 0x06	; 6
+ 102:	9f 83       	std	Y+7, r25	; 0x07
+ 104:	97 e0       	ldi	r25, 0x07	; 7
+ 106:	98 87       	std	Y+8, r25	; 0x08
+ 108:	98 e0       	ldi	r25, 0x08	; 8
+ 10a:	99 87       	std	Y+9, r25	; 0x09
+ 10c:	99 e0       	ldi	r25, 0x09	; 9
+ 10e:	9a 87       	std	Y+10, r25	; 0x0a
+ 110:	9a e0       	ldi	r25, 0x0A	; 10
+ 112:	9b 87       	std	Y+11, r25	; 0x0b
+ 114:	9b e0       	ldi	r25, 0x0B	; 11
+ 116:	9c 87       	std	Y+12, r25	; 0x0c
+ 118:	9c e0       	ldi	r25, 0x0C	; 12
+ 11a:	9d 87       	std	Y+13, r25	; 0x0d
+ 11c:	9d e0       	ldi	r25, 0x0D	; 13
+ 11e:	9e 87       	std	Y+14, r25	; 0x0e
+ 120:	9e e0       	ldi	r25, 0x0E	; 14
+ 122:	9f 87       	std	Y+15, r25	; 0x0f
+ 124:	9f e0       	ldi	r25, 0x0F	; 15
+ 126:	98 8b       	std	Y+16, r25	; 0x10
+	DDRD=0xF0;
+ 128:	90 ef       	ldi	r25, 0xF0	; 240
+ 12a:	91 bb       	out	0x11, r25	; 17
+	DDRA=0xFF;
+ 12c:	9f ef       	ldi	r25, 0xFF	; 255
+ 12e:	9a bb       	out	0x1a, r25	; 26
+	DDRC=0x00;
+ 130:	14 ba       	out	0x14, r1	; 20
+	DDRB=(1<<PINB1);
+ 132:	87 bb       	out	0x17, r24	; 23
+	
+	char p1, p2, p3, p4, swch, i;
+	//PORTA=digit[16];
+	PORTA=0b11000110;
+ 134:	86 ec       	ldi	r24, 0xC6	; 198
+ 136:	8b bb       	out	0x1b, r24	; 27
+	while(1)
+	{
+		//TODO:: Please write your application code
+			//PORTA=0b11000110;
+			swch = PINC&0b00000010;
+ 138:	93 b3       	in	r25, 0x13	; 19
+ 13a:	92 70       	andi	r25, 0x02	; 2
+			if (PORTA==0b11000000 & swch==0){
+ 13c:	8b b3       	in	r24, 0x1b	; 27
+ 13e:	21 e0       	ldi	r18, 0x01	; 1
+ 140:	80 3c       	cpi	r24, 0xC0	; 192
+ 142:	09 f0       	breq	.+2      	; 0x146 <main+0x7c>
+ 144:	20 e0       	ldi	r18, 0x00	; 0
+ 146:	81 e0       	ldi	r24, 0x01	; 1
+ 148:	91 11       	cpse	r25, r1
+ 14a:	80 e0       	ldi	r24, 0x00	; 0
+ 14c:	82 23       	and	r24, r18
+ 14e:	11 f0       	breq	.+4      	; 0x154 <main+0x8a>
+				PORTA=0b11000110;
+ 150:	86 ec       	ldi	r24, 0xC6	; 198
+ 152:	8b bb       	out	0x1b, r24	; 27
+			}
+			
+		
+		    //for(i=0;i<4;i++){
+				//PORTA=0b10000000;
+			key1=GetKeyPressed();
+ 154:	0e 94 c2 00 	call	0x184	; 0x184 <GetKeyPressed>
+ 158:	90 93 03 01 	sts	0x0103, r25	; 0x800103 <key1+0x1>
+ 15c:	80 93 02 01 	sts	0x0102, r24	; 0x800102 <key1>
+				key3= GetKeyPressed();
+				_delay_ms(500);
+				PORTA=0b00000000;
+				key4= GetKeyPressed();
+				//_delay_ms(400);*/
+			if(key1!=16)// & key2!=16 & key3!=16 & key4!=16)
+ 160:	80 31       	cpi	r24, 0x10	; 16
+ 162:	91 05       	cpc	r25, r1
+ 164:	49 f3       	breq	.-46     	; 0x138 <main+0x6e>
+					//p1=digit[password[0]];//+digit[key2]+digit[key3]+digit[key4];
+					//p2=digit[password[1]];
+					//p3=digit[password[2]];
+					//p4=digit[password[3]];
+				
+					if (digit[key1]==password[0] )//&& digit[key2]==password[1] && digit[key3]==password[2] && digit[key4]==password[3])//p1==2 && p2==3 && p3==4 && p4==5)// & p2==0x03 & p3==0x04 & p4==0x05)
+ 166:	e1 e0       	ldi	r30, 0x01	; 1
+ 168:	f0 e0       	ldi	r31, 0x00	; 0
+ 16a:	ec 0f       	add	r30, r28
+ 16c:	fd 1f       	adc	r31, r29
+ 16e:	e8 0f       	add	r30, r24
+ 170:	f9 1f       	adc	r31, r25
+ 172:	80 81       	ld	r24, Z
+ 174:	81 13       	cpse	r24, r17
+ 176:	03 c0       	rjmp	.+6      	; 0x17e <main+0xb4>
+					{
+						PORTA=0b11000000;
+ 178:	80 ec       	ldi	r24, 0xC0	; 192
+ 17a:	8b bb       	out	0x1b, r24	; 27
+ 17c:	dd cf       	rjmp	.-70     	; 0x138 <main+0x6e>
+						
+					}
+					else{
+						PORTA=0b11000110;
+ 17e:	86 ec       	ldi	r24, 0xC6	; 198
+ 180:	8b bb       	out	0x1b, r24	; 27
+ 182:	da cf       	rjmp	.-76     	; 0x138 <main+0x6e>
